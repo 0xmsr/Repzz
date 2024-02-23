@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repzzstore TopUp Clash Of Clans</title>
+    <link rel="stylesheet" href="css/form.css"/>
+    
+    <style>
+      body {
+        font-family: 'Segoe UI', Monospace;
+        text-align: center;
+        background-color: #f9f9f9;
+        background-image: url('img/repzzstorebk.png');
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      /* CSS untuk gambar di belakang opsi */
+      select option {
+        background-repeat: no-repeat;
+        background-size: 30px; /* Ukuran gambar disesuaikan dengan kebutuhan */
+        background-position: left center; /* Letakkan gambar di sebelah kiri teks */
+        padding-left: 40px; /* Jarak dari kiri agar tidak tumpang tindih dengan gambar */
+      }
+    </style>
+</head>
+<body>
+    <h2>Repzzstore</h2>
+    <img class="imgbundar" src="img/repzzstore.jpg" width="170"/>
+    
+    <form id="topUpForm">
+      <div>Clash Of Clans</div>
+      <div class="kosong"></div>
+        <div>
+            <label for="playertag">Player Tag:</label>
+            <input type="text" id="playertag" name="playertag" placeholder="Masukkan Player Tag#" required>
+        </div>
+        <p class="font9"><i>Cara Menemukan Player Tag Tekan tombol 'Profil' di pojok kiri atas layar permainan kamu. Lihat Tag Pemain kamu tepat di bawah nama permainan kamu. 
+        <p class="font9"><i>Contoh: #Q9RYL0GR9</i></p></i></p>
+        <div><img class="pricelist" src="img/cocpricelist.png" width="320"></div>
+        
+        <!-- gambar gems -->
+    <div id="gemImageContainer"></div>
+        <div>
+            <label for="gemsAmount">Pilih Jumlah gems:</label>
+            <select id="gemsAmount" name="gemsAmount" onchange="showGemImage()" required>
+                <option value="" data-img="">Pilih Jumlah gems</option>
+                <option value="💎88gems" data-img="img/gems88.png">88 gems - Rp18.000</option>
+                <option value="💎550gems" data-img="img/gems550.png">550 gems - Rp80.000</option>
+                <option value="💎1320gems" data-img="img/gems1320.png">1320 gems - Rp162.000</option>
+                <option value="💎2750gems" data-img="img/gems2750.png">2750 gems - Rp333.000</option>
+                <option value="💎7150gems" data-img="img/gems7150.png">7150 gems - Rp803.000</option>
+                <option value="💎15400gems" data-img="img/gems15400.png">15400 gems - Rp1.603.000</option>
+                <option value="GoldPass" data-img="img/cocgoldpass.png">GoldPass - Rp120.000</option>
+                <!-- Tambahkan gambar emoji gems lainnya sesuai kebutuhan -->
+            </select>
+        </div>
+        <div>
+            <label for="paymentMethod">Pilih Metode Pembayaran:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value=""></option>
+                <option value="dana">Dana</option>
+                <option value="gopay">GoPay sedang error mohon pilih yang lain⛔</option>
+                <option value="ovo">OVO sedang error mohon pilih yang lain⛔</option>
+            </select>
+        </div>
+        <div>
+            <label for="phoneNumber">Nomor Telepon kamu:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Masukkan nomor telepon kamu" required>
+        </div>
+        <button type="submit">Kirim Permintaan Top Up</button>
+    </form>
+
+    <script>
+        function showGemImage() {
+            const selectElement = document.getElementById('gemsAmount');
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const selectedImage = selectedOption.getAttribute('data-img');
+            const gemImageContainer = document.getElementById('gemImageContainer');
+            gemImageContainer.innerHTML = ""; // Bersihkan gambar sebelumnya
+            
+            if (selectedImage) {
+                const img = document.createElement('img');
+                img.src = selectedImage;
+                img.alt = 'Gem Emoji';
+                img.style.maxWidth = '100px'; // Sesuaikan ukuran gambar sesuai kebutuhan
+                gemImageContainer.appendChild(img);
+            }
+        }
+
+        document.getElementById('topUpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const playertag = document.getElementById('playertag').value;
+            const gemsAmount = document.getElementById('gemsAmount').value;
+            const price = document.getElementById('gemsAmount').selectedOptions[0].text.split(" - ")[1];
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            let message = `Hai min, saya ingin melakukan top up Clash Of Clans dengan detail sebagai berikut:\nPlayer Tag: ${playertag}\nBeli: ${gemsAmount} (${price})\n`;
+
+            if (phoneNumber) {
+                message += `Nomor Telepon: ${phoneNumber}\n`;
+            }
+
+            message += `dan silakan kamu lakukan pembayaran melalui ${paymentMethod} ke nomor +628989783974 setelah itu kirim pesan ini ke admin dan tunggu 1mnt-5mnt terimakasih`;
+
+            // Tampilkan popup konfirmasi sebelum mengarahkan ke WhatsApp
+            if (confirm("Apakah kamu yakin sudah memasukan semuanya dengan benar?")) {
+                // Redirect ke WhatsApp dengan pesan yang sudah diisi
+                window.location.href = `https://wa.me/6289678664759?text=${encodeURIComponent(message)}`;
+            }
+        });
+    </script>
+</body>
+</html>

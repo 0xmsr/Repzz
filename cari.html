@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Cari</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <link rel="stylesheet" href="css/home1.css"/>
+    
+  </head>
+<body>
+<div class="search-container">
+        <input type="text" id="searchInput" placeholder="Cari..." oninput="search()">
+        <button>Cari</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+</body>
+    <script>
+        // Data game
+        var games = [
+            { name: "Mobile Legends ML mlbb", image: "img/mlbblogo.png", link: "mlbb.html" },
+            { name: "Free Fire FF epep", image: "img/freefirelogo.png", link: "freefire.html" },
+            { name: "Clash of Clans coc", image: "img/coclogo.png", link: "coc.html" }
+        ];
+
+        // Fungsi pencarian
+        function search() {
+            var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            if (searchTerm.trim() !== "") {
+                var searchResults = performSearch(searchTerm);
+                displayResults(searchResults);
+            } else {
+                document.getElementById("searchResults").innerHTML = "";
+            }
+        }
+
+        // Logika pencarian
+        function performSearch(term) {
+            return games.filter(function(game) {
+                return game.name.toLowerCase().includes(term);
+            });
+        }
+
+        // Menampilkan hasil pencarian
+        function displayResults(results) {
+            var resultsContainer = document.getElementById("searchResults");
+            resultsContainer.innerHTML = "";
+            if (results.length === 0) {
+                resultsContainer.textContent = "Tidak ada hasil yang ditemukan.";
+            } else {
+                results.forEach(function(result) {
+                    var resultElement = document.createElement("a");
+                    resultElement.href = result.link;
+                    resultElement.target = "_blank";
+                    resultElement.innerHTML = `
+                        <div>
+                            <img style=" width: 100%; text-align:center; border-radius: 40px; border: inset skyblue 5px;" src="${result.image}" alt="${result.name}">
+                            <span>${result.name}</span>
+                        </div>
+                    `;
+                    resultsContainer.appendChild(resultElement);
+                });
+            }
+        }
+    </script>
+</html>
