@@ -1,0 +1,119 @@
+.imgbundar {
+  align-items: center;
+  border: inset skyblue 12px;
+  border-radius: 300px;
+  transition: transform 3s ease;
+}
+.imgbundar:hover {
+  transform: scale(1.0) rotate(11520deg); /* Memperbesar gambar sebesar 50% saat dihover */
+  box-shadow: 0 0 60px rgba(1,160,252,0.837); /* Efek bayangan saat dihover */
+}
+.pricelist {
+  border-radius: 20px;
+}
+.pricelist:hover {
+  transform: scale(1.3); /* Memperbesar gambar sebesar 30% saat dihover */
+  box-shadow: 0 0 600px rgba(1,245,252,0.837); /* Efek bayangan saat dihover */
+}
+.kosong {
+  height: 50px;
+        }
+h2 {
+  text-align: center;
+  font-family: Monospace;
+  color: #87ceeb;
+  margin-bottom: 30px;
+  font-weight: 600;
+  background-color: white;
+  
+}
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: auto;
+  max-width: 100%;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+  
+}
+input[type="text"],
+input[type="tel"],
+select {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+        }
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus {
+border-color: #87ceeb;
+        }
+select {
+  appearance: none;
+  background-image: url('img/repzzstore.png');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 10px 5px;
+}
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: #5ec8f3;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+  background-color: #1bebf0;
+}
+.payment-options {
+  margin-top: 20px;
+}
+.payment-options label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  
+}
+.payment-options input[type="radio"] {
+  display: none;
+  
+}
+.payment-options label.payment-method {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  
+}
+.payment-options input[type="radio"]:checked + label.payment-method {
+  border-color: #007bff;
+        }
+.font9 {
+font-size: 9px;
+  
+}
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  margin-top: 20px;
+}

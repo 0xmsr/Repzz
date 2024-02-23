@@ -1,0 +1,163 @@
+body {
+  background-color: skyblue;
+  text-align: center;
+}
+/* CSS untuk kotak pencarian */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #278597;
+  border-radius: 19px;
+  padding: 5px;
+  width: 300px;
+}
+.search-container input[type="text"] {
+  flex: 1;
+  border: inset 6px skyblue;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 16px;
+}
+.search-container button {
+  background-color: #eb9f32;
+  color: #97dcee;
+  border: inset 6px skyblue;
+  padding: 12px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 10px;
+}
+.search-container button:hover {
+  background-color: skyblue;
+}
+.search-results {
+  margin-top: 10px;
+}
+/* Media query untuk mode desktop */
+@media (min-width: 768px) {
+.search-container {
+  width: auto;
+  max-width: 400px;
+  margin: 0 auto;
+}
+    }
+#myNav {
+  position: fixed;
+  height: 60px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: outset skyblue 12px;
+  background-color: #87ceeb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+    }
+    .nav-link {
+      font-family: Monospace;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    @media (min-width: 768px) {
+    #myNav {
+    display: none;
+    }
+   }
+
+    .nav-link.active {
+      color: #f3a718;
+    }
+.homeh2 {
+  color: white;
+  text-align: center;
+  font-family: Monospace;
+  background-color: #ffffff73;
+  border: inset #14607f 12px;
+}
+.menu123 {
+  border-radius: 12px;
+  height: 700px; 
+  border:inset black 12px;
+  background-color: 
+  #f0f0f0; margin-top: 50px;
+}
+.menu456 {
+  border-radius: 12px;
+  height: 400px; 
+  border:outset #1775b1 12px;
+  background-color: 
+  #b1ddf9; margin-top: 50px;
+}
+.contact {
+  border-radius: 10px;
+  border: outset black 10px;
+  height: 150px; 
+  background-color: #e0e0e0;
+}
+.monotext {
+  font-family: Monospace;
+  color: white;
+}
+.monotext2 {
+  font-family: Monospace;
+  color: white;
+  font-size: 15px;
+  background-color: skyblue;
+  border: outset skyblue 12px;
+}
+#text {
+  color: black; /* Warna teks awal */
+  cursor: pointer;
+  transition: color 0.7s ease; /* Animasi perubahan warna dengan durasi 0.3 detik */
+}
+#text:hover {
+  color: #87ceeb;
+}
+.menuberubah {
+  font-family: Monospace;
+  color: black; /* Warna teks awal */
+  cursor: pointer;
+  transition: color 0.7s ease; /* Animasi perubahan warna dengan durasi 0.3 detik */
+}
+.menuberubah:hover {
+  color: #87ceeb;
+  transform: scale(1.1);
+  /* Warna teks saat dihover */
+}
+.imgrepzz {
+  width: 45px; /* Lebar gambar */
+  height: auto; /* Tinggi gambar menyesuaikan proporsi aslinya */
+  transition: transform 0.3s ease; /* Animasi perubahan transformasi dengan durasi 0.3 detik */
+}
+
+.imgrepzz:hover {
+  transform: scale(1.5); /* Memperbesar gambar saat dihover */
+}
+
+.logobundar {
+  border: inset #14607f 6px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.logobundar:hover {
+  transform: scale(1.1); /* Memperbesar gambar sebesar 30% saat dihover */
+  box-shadow: 0 0 60px rgba(1,160,252,0.837); /* Efek bayangan saat dihover */
+}
+
+.bundar {
+  text-align: center;
+  border-radius: 150px;
+  border: outset #14607f 12px;
+  transition: transform 3s ease;
+}
+.bundar:hover {
+  transform: scale(1.4) rotate(11520deg); /* Memperbesar gambar sebesar 50% saat dihover */
+  box-shadow: 0 0 60px rgba(1,160,252,0.837); /* Efek bayangan saat dihover */
+}
+.kosong {
+  height: 500px;
+}
+.kosong2 {
+  height: 45px;
+}
