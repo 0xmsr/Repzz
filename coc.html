@@ -65,7 +65,7 @@
                 <option value=""></option>
                 <option value="dana">Dana</option>
                 <option value="gopay">GoPay sedang error mohon pilih yang lain⛔</option>
-                <option value="ovo">OVO sedang error mohon pilih yang lain⛔</option>
+                <option value="ovo">OVO</option>
             </select>
         </div>
         <div>
@@ -93,27 +93,37 @@
         }
 
         document.getElementById('topUpForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const playertag = document.getElementById('playertag').value;
-            const gemsAmount = document.getElementById('gemsAmount').value;
-            const price = document.getElementById('gemsAmount').selectedOptions[0].text.split(" - ")[1];
-            const paymentMethod = document.getElementById('paymentMethod').value;
-            const phoneNumber = document.getElementById('phoneNumber').value;
+    event.preventDefault();
+    const playerTag = document.getElementById('playertag').value;
+    const gemsAmount = document.getElementById('gemsAmount').value;
+    const price = document.getElementById('gemsAmount').selectedOptions[0].text.split(" - ")[1];
+    const paymentMethod = document.getElementById('paymentMethod').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
 
-            let message = `Hai min, saya ingin melakukan top up Clash Of Clans dengan detail sebagai berikut:\nPlayer Tag: ${playertag}\nBeli: ${gemsAmount} (${price})\n`;
+    let message = `Hai min, saya ingin melakukan top up Clash Of Clans dengan detail sebagai berikut:\nPlayer Tag: ${playerTag}\nJumlah gems: ${gemsAmount} (${price})\n`;
 
-            if (phoneNumber) {
-                message += `Nomor Telepon: ${phoneNumber}\n`;
-            }
+    if (phoneNumber) {
+        message += `Nomor Telepon: ${phoneNumber}\n`;
+    }
 
-            message += `dan silakan kamu lakukan pembayaran melalui ${paymentMethod} ke nomor +628989783974 setelah itu kirim pesan ini ke admin dan tunggu 1mnt-5mnt terimakasih`;
+    let paymentInfo = "";
 
-            // Tampilkan popup konfirmasi sebelum mengarahkan ke WhatsApp
-            if (confirm("Apakah kamu yakin sudah memasukan semuanya dengan benar?")) {
-                // Redirect ke WhatsApp dengan pesan yang sudah diisi
-                window.location.href = `https://wa.me/6289678664759?text=${encodeURIComponent(message)}`;
-            }
-        });
+    if(paymentMethod === "dana") {
+        paymentInfo = "silakan lakukan pembayaran melalui Dana ke nomor +628989783974";
+    } else if(paymentMethod === "gopay") {
+        paymentInfo = "silakan lakukan pembayaran melalui GoPay ke nomor Error";
+    } else if(paymentMethod === "ovo") {
+        paymentInfo = "silakan lakukan pembayaran melalui OVO ke nomor +62895706096010";
+    }
+
+    message += `dan ${paymentInfo} setelah itu kirim pesan ini ke admin dan tunggu 1mnt-5mnt terimakasih`;
+
+    // Tampilkan popup konfirmasi sebelum mengarahkan ke WhatsApp
+    if (confirm("apakah kamu yakin sudah memasukan semuanya dengan benar?")) {
+        // Redirect ke WhatsApp dengan pesan yang sudah diisi
+        window.location.href = `https://wa.me/+6289678664759?text=${encodeURIComponent(message)}`;
+    }
+});
     </script>
 </body>
 </html>
