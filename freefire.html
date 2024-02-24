@@ -67,14 +67,13 @@
     <script>
       document.getElementById('topUpForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const gameId = document.getElementById('gameId').value;
-    const zoneId = document.getElementById('zoneId').value;
+    const playerId = document.getElementById('playerId').value;
     const diamondAmount = document.getElementById('diamondAmount').value;
     const price = document.getElementById('diamondAmount').selectedOptions[0].text.split(" - ")[1];
     const paymentMethod = document.getElementById('paymentMethod').value;
     const phoneNumber = document.getElementById('phoneNumber').value;
 
-    let message = `Hai min, saya ingin melakukan top up mlbb dengan detail sebagai berikut:\nID Game: ${gameId}\nID Zona: ${zoneId}\nJumlah Diamond: ${diamondAmount} (${price})\n`;
+    let message = `Hai min, saya ingin melakukan top up FreeFire dengan detail sebagai berikut:\nPlayer ID: ${playerId}\nJumlah Diamond: ${diamondAmount} (${price})\n`;
 
     if (phoneNumber) {
         message += `Nomor Telepon: ${phoneNumber}\n`;
@@ -95,7 +94,7 @@
     // Tampilkan popup konfirmasi sebelum mengarahkan ke WhatsApp
     if (confirm("apakah kamu yakin sudah memasukan semuanya dengan benar?")) {
         // Redirect ke WhatsApp dengan pesan yang sudah diisi
-        window.location.href = `https://wa.me/62895706096010?text=${encodeURIComponent(message)}`;
+        window.location.href = `https://wa.me/+6289678664759?text=${encodeURIComponent(message)}`;
     }
 });
 
