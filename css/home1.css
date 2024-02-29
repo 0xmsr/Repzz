@@ -2,6 +2,12 @@ body {
   background-color: skyblue;
   text-align: center;
 }
+.image-container {
+    text-align: center;
+    background-color: black;
+    height: 300px;
+    border-radius: 20px;
+  }
 /* CSS untuk kotak pencarian */
 .search-container {
   display: flex;
@@ -149,10 +155,10 @@ body {
   text-align: center;
   border-radius: 150px;
   border: outset #14607f 12px;
-  transition: transform 3s ease;
+  transition: transform 0.5s ease;
 }
 .bundar:hover {
-  transform: scale(1.4) rotate(11520deg); /* Memperbesar gambar sebesar 50% saat dihover */
+  transform: scale(1.4) rotate(2880deg); /* Memperbesar gambar sebesar 50% saat dihover */
   box-shadow: 0 0 60px rgba(1,160,252,0.837); /* Efek bayangan saat dihover */
 }
 .kosong {
