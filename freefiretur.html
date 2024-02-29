@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repzzstore Fast Tour Registration</title>
+    <link rel="stylesheet" href="css/form.css"/>
+    
+    <style>
+      body {
+        font-family: 'Segoe UI', Monospace;
+        text-align: center;
+        background-color: #f9f9f9;
+        background-image: url('img/repzzstorebk.png');
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <h2>Repzzstore</h2>
+    <img class="imgbundar" src="img/repzzstore.jpg" width="170"/>
+    
+    <form id="fastTourForm">
+      <div>FreeFire Fast Tour Registration</div>
+      <div class="kosong"></div>
+      <p>Main Event 03/10/2024</p>
+      <div class="kosong"></div>
+      <label for="teamName">Nama Tim:</label>
+      <input type="text" id="teamName" name="teamName">
+      
+      <label for="paymentMethod">Metode Pembayaran:</label>
+      <select id="paymentMethod" name="paymentMethod">
+        <option value="dana">DANA</option>
+        <!---tambahkan metode lain--->
+      </select>
+
+      <label for="phoneNumber">Nomor Telepon:</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Masukkan nomor telepon">
+
+      <button type="submit" onclick="sendWhatsApp()">Daftar Fast Tour</button>
+    </form>
+
+    <script>
+      function sendWhatsApp() {
+        var teamName = document.getElementById("teamName").value;
+        var paymentMethod = document.getElementById("paymentMethod").value;
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        var message = "Pendaftaran Fast Tour untuk tim " + teamName + ". Metode pembayaran: " + paymentMethod + ". Silakan lakukan pembayaran melalui nomor 089678664759. Terimakasih😁";
+        var whatsappURL = "https://api.whatsapp.com/send?phone=6289678664759&text=" + encodeURIComponent(message);
+        window.open(whatsappURL);
+      }
+    </script>
+</body>
+</html>
