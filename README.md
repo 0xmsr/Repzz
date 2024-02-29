@@ -1,2 +1,6 @@
 # Repzz
-Web v01
+
+Apa Itu Repzzstore??
+"Repstore Adalah Website Untuk Keperluan Game"
+
+Web v0.11
